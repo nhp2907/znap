@@ -1,0 +1,32 @@
+[package]
+name = "znap"
+version = "0.1.0"
+edition = "2021"
+description = "Region screenshot + annotate tool (Ctrl+Alt+S)"
+
+[dependencies]
+winit = "0.30"
+# Pinned: newer releases need windows-sys 0.61 (raw-dylib), which fails on the GNU toolchain without full MinGW.
+softbuffer = "=0.4.6"
+tiny-skia = "0.11"
+ab_glyph = "0.2"
+arboard = "=3.4.1"
+global-hotkey = "0.6"
+tray-icon = "0.19"
+rfd = "0.15"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true
+
+# Pixel loops are slow unoptimized; keep debug builds usable.
+[profile.dev]
+opt-level = 2
