@@ -3805,6 +3805,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "znap-setup"
+version = "0.1.0"
+dependencies = [
+ "rfd",
+ "windows-sys 0.59.0",
+]
+
+[[package]]
 name = "zune-core"
 version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"

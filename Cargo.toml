@@ -4,6 +4,11 @@ version = "0.1.0"
 edition = "2021"
 description = "Region screenshot + annotate tool (Ctrl+Alt+S)"
 
+# `setup` embeds target/release/znap.exe: build znap first, then `-p znap-setup`.
+[workspace]
+members = [".", "setup"]
+default-members = ["."]
+
 [dependencies]
 winit = "0.30"
 # Pinned: newer releases need windows-sys 0.61 (raw-dylib), which fails on the GNU toolchain without full MinGW.
