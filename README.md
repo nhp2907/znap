@@ -31,11 +31,7 @@ cargo build --release  # target/release/znap.exe, no console
 
 ## Install (per user)
 
-Download `znap-<ver>-windows-x64.zip` from [Releases](https://github.com/nhp2907/znap/releases), unzip, run:
-
-```bash
-powershell -ExecutionPolicy Bypass -File install.ps1
-```
+Download `znap-<ver>-windows-x64.zip` from [Releases](https://github.com/nhp2907/znap/releases), unzip, double-click `install.cmd`. Installs + adds auto-start on login.
 
 - Exe: `%LOCALAPPDATA%\Programs\znap\znap.exe`
 - Auto-start: `shell:startup\znap.lnk`

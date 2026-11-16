@@ -8,6 +8,7 @@ $exe = Join-Path $dir 'znap.exe'
 Get-Process znap -ErrorAction SilentlyContinue | Stop-Process -Force
 New-Item -ItemType Directory -Force $dir | Out-Null
 Copy-Item $src $exe -Force
+Unblock-File $exe  # drop "downloaded from internet" mark
 
 $lnk = Join-Path ([Environment]::GetFolderPath('Startup')) 'znap.lnk'
 $sc = (New-Object -ComObject WScript.Shell).CreateShortcut($lnk)
