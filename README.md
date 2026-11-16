@@ -7,7 +7,7 @@ Region screenshot + annotate tool in Rust. Windows first.
 | Key / action | Effect |
 |---|---|
 | `Ctrl+Alt+S` | Capture the monitor under the cursor, open overlay |
-| Drag | Select region (click without drag = whole screen) |
+| Drag | Select region (click without drag = whole screen); Rect tool is then active |
 | Drag edges/corners | Resize selection |
 | Drag inside (no tool) | Move selection |
 | Toolbar | Rect, Ellipse, Arrow, Pen, Text, Mosaic, colors, Undo, Save, Copy, Cancel, Done |
@@ -30,6 +30,12 @@ cargo build --release  # target/release/znap.exe, no console
 ```
 
 ## Install (per user)
+
+Download `znap-<ver>-windows-x64.zip` from [Releases](https://github.com/nhp2907/znap/releases), unzip, run:
+
+```bash
+powershell -ExecutionPolicy Bypass -File install.ps1
+```
 
 - Exe: `%LOCALAPPDATA%\Programs\znap\znap.exe`
 - Auto-start: `shell:startup\znap.lnk`

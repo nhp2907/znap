@@ -319,6 +319,8 @@ impl Overlay {
                         self.sel = Some(Sel { l: 0.0, t: 0.0, r: w, b: h });
                     }
                 }
+                // Region chosen: default to Rect tool.
+                self.tool = Some(Tool::Rect);
             }
             Drag::Draw => {
                 if let Some(s) = self.current.take().filter(Shape::is_visible) {
