@@ -34,7 +34,8 @@ cargo build --release  # target/release/znap.exe, no console
 Download `znap-<ver>-windows-x64.zip` from [Releases](https://github.com/nhp2907/znap/releases), unzip, double-click `install.cmd`. Installs + adds auto-start on login.
 
 - Exe: `%LOCALAPPDATA%\Programs\znap\znap.exe`
-- Auto-start: `shell:startup\znap.lnk`
+- Auto-start: `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` → `znap`
+- Remove: double-click `uninstall.cmd`
 
 ## Layout
 
