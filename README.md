@@ -27,18 +27,18 @@ Needs `rustup`. `rust-toolchain.toml` selects the GNU toolchain (no Visual Studi
 ```bash
 cargo run              # debug, with console logs
 cargo build --release  # target/release/znap.exe, no console
+cargo build --release -p znap-setup  # target/release/znap-setup.exe (embeds znap.exe; build it first)
 ```
 
 ## Install (per user)
 
-Download `znap-<ver>-windows-x64.zip` from [Releases](https://github.com/nhp2907/znap/releases), unzip, run:
-
-```bash
-powershell -ExecutionPolicy Bypass -File install.ps1
-```
+Download `znap-setup-<ver>.exe` from [Releases](https://github.com/nhp2907/znap/releases), run it, click **Install**. No admin needed.
+Options: folder, start with Windows, desktop / Start menu shortcut, open after install.
+Unsigned exe: if SmartScreen warns, click **More info → Run anyway**.
 
 - Exe: `%LOCALAPPDATA%\Programs\znap\znap.exe`
-- Auto-start: `shell:startup\znap.lnk`
+- Auto-start: `HKCU\Software\Microsoft\Windows\CurrentVersion\Run` → `znap`
+- Remove: Settings → Apps → znap → Uninstall
 
 ## Layout
 
@@ -49,6 +49,7 @@ powershell -ExecutionPolicy Bypass -File install.ps1
 - `src/toolbar.rs` – toolbar layout + icons
 - `src/text.rs` – text rendering (system font)
 - `src/output.rs` – clipboard, PNG save
+- `setup/` – installer (`znap-setup.exe`)
 
 ## TODO
 
